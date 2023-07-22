@@ -8,7 +8,7 @@ import math
 from typing import List, Tuple
 
 
-def  index_range(page: int, page_size: int) -> Tuple:
+def index_range(page: int, page_size: int) -> Tuple:
     """Return the correct pagination"""
     start_index = (page - 1) * page_size
     end_index = page * page_size
@@ -39,7 +39,7 @@ class Server:
            (i.e. the correct list of rows)"""
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
-        
+
         correct_indexes = index_range(page, page_size)
         data_lists = self.dataset()
         list_of_rows = data_lists[correct_indexes[0]:correct_indexes[1]]
